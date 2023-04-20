@@ -20,6 +20,7 @@ export default function Weather() {
     dispatch(getWeather(location))
   }, [])
   
+  console.log('woi', loading, data);
   // Toggle between loader and display content once API has been fetched
   const renderContent = () => {
     let display
