@@ -5,14 +5,14 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 
 const routes = [
     {
-        name: 'Home',
-        icon: 'home',
-        navigate: 'Home'
-    },
-    {
         name: 'History',
         icon: 'cog',
         navigate: 'History'
+    },
+    {
+        name: 'Home',
+        icon: 'home',
+        navigate: 'Home'
     },
     {
         name: 'Weather',

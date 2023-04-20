@@ -15,7 +15,6 @@ export default function NavigationScreens() {
     // const location = useSelector(checkLocation), city = useSelector(getCity)
 	const {location, city} = useSelector((state) => state.user)
 
-    console.log(location);
 	useEffect(() => {
 		console.log(location, city);
 		if(!location) {
