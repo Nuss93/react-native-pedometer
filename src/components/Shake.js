@@ -1,4 +1,4 @@
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import RNShake from 'react-native-shake';
 import { Styles } from '../stylesheet';
@@ -13,17 +13,12 @@ export default function Shake() {
         })
 
         return () => {
-            console.log('unsubscib');
             subscription.remove()
         }
     }, [steps])
 
     const countStep = () => {
-        console.log('device is shaken');
-        console.log(steps);
-        let count = steps + 1
-        console.log(count);
-        setSteps(steps + 1)
++        setSteps(steps + 1)
     }
 
     return (
@@ -32,7 +27,9 @@ export default function Shake() {
                 <Text style={{color:'#fff'}}>Steps</Text>
                 <Text style={{color:'#fff', textAlign:'center'}}>{steps}</Text>
             </View>
-            <Button title='Add step' onPress={() => setSteps(steps + 1)} />
+            <TouchableOpacity style={{marginTop:30}} onPress={() => setSteps(steps + 1)} >
+                <Text style={{textAlign:'center', color:'#fff'}}>Add Step</Text>
+            </TouchableOpacity>
         </View>
     )
 }

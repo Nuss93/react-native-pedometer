@@ -7,6 +7,7 @@ import WIP from './screens/WIP';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkLocation, getCity, updateLocation } from './features/userSlice';
 import Weather from './screens/Weather';
+import { getWeather } from './features/weatherSlice';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ export default function NavigationScreens() {
 					city: result.city
 				}
 				dispatch(updateLocation(coords))
+				dispatch(getWeather(coords))
 			})
 		}
 		

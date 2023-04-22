@@ -12,15 +12,7 @@ export default function Weather() {
   const {location, city} = useSelector((state) => state.user)
   const {data, loading} = useSelector((state) => state.weather)
   const codes = weathercodes
-
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    // console.log('location', location);
-    dispatch(getWeather(location))
-  }, [])
   
-  console.log('woi', loading, data);
   // Toggle between loader and display content once API has been fetched
   const renderContent = () => {
     let display
