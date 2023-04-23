@@ -44,9 +44,9 @@ export default function Weather() {
             let currentTemperature = data.hourly.temperature_2m[index]
             return (
               <View key={index} style={{...styles.weatherCard_hourly}}>
-                <Text style={{color:'#fff'}}>{currentTime}</Text>
-                <Text style={{color:'#fff'}}>{currentTemperature}˚</Text>
-                <Text style={{color:'#fff'}}>{currentCode}</Text>
+                <Text style={{...styles.fontBold,color:'#000'}}>{currentTime}</Text>
+                <Text style={{...styles.fontBold, ...styles.fontLarge,color:'#000'}}>{currentTemperature}˚</Text>
+                <Text style={{...styles.fontBold, color:'#000'}}>{currentCode}</Text>
               </View>
             )
           })}

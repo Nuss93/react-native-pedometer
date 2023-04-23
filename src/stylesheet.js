@@ -27,11 +27,12 @@ export const Styles = {
         marginBottom: 10,
     },
     weatherCard_hourly: {
-        backgroundColor:'#544c4a',
-        width: 100,
-        padding:20,
+        backgroundColor: root.secondary,
+        width: 150,
+        padding:10,
         marginRight:10,
         borderRadius: 10,
+        alignItems: 'center'
     },
     weatherCard_daily: {
         width: '100%',
