@@ -25,14 +25,18 @@ export default function Weather() {
     }
     if(loading === 'idle' && data.length  !== 0) {
       display = <ScrollView style={{flex:1, backgroundColor:'#fff', ...styles.padding50}}>
-        <View style={{...styles.weatherCard_header}}>
-          <Text>{city}</Text>
-          <Text>{data.current_weather.temperature}</Text>
-          <Text>{codes[data.current_weather.weathercode]}</Text>
+        <View style={{...styles.weatherCard_header, justifyContent:'space-between', flexDirection:'row'}}>
+          <View>
+            <Text style={{...styles.fontLarge, ...styles.fontBold, color:'#fff'}}>{city}</Text>
+            <Text style={{...styles.fontMedium,color:'#fff'}}>{codes[data.current_weather.weathercode]}</Text>
+          </View>
+          <View>
+            <Text style={{...styles.fontLarge,color:'#fff'}}>{data.current_weather.temperature}˚</Text>
+          </View>
         </View>
 
         {/* Today's hourly forecast */}
-        <Text style={{marginBottom:5, marginTop:20}}>Today's forecast</Text>
+        <Text style={{...styles.fontMedium, ...styles.fontBold, marginBottom:5, marginTop:20}}>Today's forecast</Text>
         <ScrollView horizontal={true} style={{flex:1,}} showsVerticalScrollIndicator={true}>
           {data.hourly.time.slice(0,23).map((element,index) => {
             let currentTime = new Date(element).toLocaleTimeString('en-MY',{timeStyle:'short'})
@@ -41,7 +45,7 @@ export default function Weather() {
             return (
               <View key={index} style={{...styles.weatherCard_hourly}}>
                 <Text style={{color:'#fff'}}>{currentTime}</Text>
-                <Text style={{color:'#fff'}}>{currentTemperature}</Text>
+                <Text style={{color:'#fff'}}>{currentTemperature}˚</Text>
                 <Text style={{color:'#fff'}}>{currentCode}</Text>
               </View>
             )
@@ -49,7 +53,7 @@ export default function Weather() {
         </ScrollView>
 
         {/* Next week's forecast */}
-        <Text style={{marginBottom:5, marginTop:20}}>The next week</Text>
+        <Text style={{...styles.fontMedium, ...styles.fontBold, marginBottom:5, marginTop:20}}>The next week</Text>
         {data.daily.time.map((element,index) =>{
             let currentTime = new Date(element).toLocaleDateString('en-MY', {month:'2-digit', day:'2-digit'})
             let currentDay = new Date(element).toLocaleDateString('en-MY', {weekday:'short'})
@@ -59,13 +63,13 @@ export default function Weather() {
             return (
               <View key={index} style={{...styles.weatherCard_daily}}>
                 <View style={{flex:1}}>
-                  <Text>{currentDay}</Text>
-                  <Text>{currentTime}</Text>
+                  <Text style={{...styles.fontMedium}}>{currentDay}</Text>
+                  <Text style={{...styles.fontSmall, ...styles.fontBold}}>{currentTime}</Text>
                 </View>
                 <View style={{flex:2.5}}>
                   
-                  <Text style={{color:'#000'}}>{currentTemperature}</Text>
-                  <Text style={{color:'#000'}}>{currentCode}</Text>
+                  <Text style={{...styles.fontLarge, ...styles.fontBold, textAlign:'right',color:'#000'}}>{currentTemperature}˚</Text>
+                  <Text style={{...styles.fontMedium, textAlign:'right', color:'#000'}}>{currentCode}</Text>
                 </View>
               </View>
             )

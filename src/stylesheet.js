@@ -34,7 +34,6 @@ export const Styles = {
         borderRadius: 10,
     },
     weatherCard_daily: {
-        // backgroundColor:'#544c4a',
         width: '100%',
         padding:10,
         marginBottom:10,
