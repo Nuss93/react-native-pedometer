@@ -18,6 +18,7 @@ export default function NavigationScreens() {
 
 	useEffect(() => {
 		console.log(location, city);
+		// Using ipapi.co API to fetch device's coordinates
 		if(!location) {
 			let url = 'https://ipapi.co/json'
 			fetch(url)
@@ -29,7 +30,11 @@ export default function NavigationScreens() {
 					lng: result.longitude,
 					city: result.city
 				}
+
+				// Saves coordinates into redux stores
 				dispatch(updateLocation(coords))
+
+				// Geths the weather details and stores in redux stores
 				dispatch(getWeather(coords))
 			})
 		}

@@ -35,7 +35,7 @@ export default function Home() {
         </View>
 
         <View style={{...styles.padding30, paddingTop: 0, flexDirection:'row'}}>
-          <Pressable onPress={() => {setModalVisible(!modalVisible)}} style={{flex:1, ...styles.homeCard}}>
+          <Pressable onPress={() => {setModalVisible(!modalVisible)}} style={{flex:1, ...styles.homeCard, height: 100}}>
             <Text>Set your goals</Text>
           </Pressable>
           <View style={{flex:1, ...styles.homeCard}}>

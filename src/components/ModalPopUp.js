@@ -36,7 +36,7 @@ export default function ModalPopUp(props) {
           >
             <Text>This function is still a work in progress!</Text>
             <Pressable style={{...styles.padding10, marginTop:15, backgroundColor: root.primary, borderRadius:10}} onPress={() => {props.childSetModalVisible()}}>
-              <Text style={{color:'#fff'}}>Close</Text>
+              <Text style={{color:'#fff'}}>Close modal</Text>
             </Pressable>
           </View>
         </View>
