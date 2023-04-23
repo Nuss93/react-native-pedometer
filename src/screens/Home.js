@@ -9,11 +9,14 @@ import { checkLocation, getCity } from '../features/userSlice';
 import { getCurrentWeather, getWeather } from '../features/weatherSlice';
 import ModalPopUp from '../components/ModalPopUp';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import weathercodes from '../static/weathercode';
 
 
 const styles = StyleSheet.create(Styles)
 export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
+  const codes = weathercodes
+  const clearSkies = [0,1,2,3,45,48]
 
   const {location, city} = useSelector((state) => state.user)
   const {data,loading} = useSelector((state) => state.weather)
@@ -23,11 +26,12 @@ export default function Home() {
   
   const renderContent = () => {
     let display
-    if(loading === 'idle' && data.length === 0) {
+    if(data.length === 0) {
       display = <View style={{flex:1, backgroundColor: '#fff', alignItems: 'center', justifyContent:'center'}}>
         <Text>Loading</Text>
       </View>
-    } else {
+    }
+    if(loading === 'idle' && data.length !== 0) {
       display = <View style={{flex:1, backgroundColor:'#fff'}}>
         <View style={{...styles.padding50, paddingBottom: 20 }}>
           <Text style={{...styles.fontLarge, ...styles.fontBold}}>Hello user!</Text>
@@ -35,11 +39,14 @@ export default function Home() {
         </View>
 
         <View style={{...styles.padding30, paddingTop: 0, flexDirection:'row'}}>
-          <Pressable onPress={() => {setModalVisible(!modalVisible)}} style={{flex:1, ...styles.homeCard, height: 100}}>
+          <Pressable onPress={() => {setModalVisible(!modalVisible)}} style={{flex:1, ...styles.homeCard}}>
             <Text>Set your goals</Text>
           </Pressable>
           <View style={{flex:1, ...styles.homeCard}}>
             <Text>Today's weather</Text>
+            <Text>{data.current_weather.temperature}</Text>
+            <Text>{codes[data.current_weather.weathercode]}</Text>
+            <Text>{clearSkies.includes(data.current_weather.weathercode) ? 'The weather is perfect for a long walk! Get your steps in!' : 'Oh no! It is best to stay home today. Perhaps try walking in place?'}</Text>
           </View>
         </View>
 

@@ -4,7 +4,6 @@ import { Styles, root } from '../stylesheet';
 
 const styles = StyleSheet.create(Styles)
 export default function ModalPopUp(props) {
-  console.log('oii', props);
   return (
     <Modal
         animationType='slide'
