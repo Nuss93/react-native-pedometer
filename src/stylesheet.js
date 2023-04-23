@@ -16,9 +16,11 @@ export const Styles = {
     fontLight: { fontWeight: '200' },
     homeCard: {
         backgroundColor: root.secondary,
-        padding:20,
+        padding:15,
         marginRight:10,
         borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     weatherCard_header: {
         backgroundColor: root.primary,

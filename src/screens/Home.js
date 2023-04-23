@@ -4,9 +4,7 @@ import BottomTabNav from '../components/BottomTabNav'
 import { Styles, root } from '../stylesheet';
 import StepTracker from '../components/StepTracker';
 import Shake from '../components/Shake';
-import { useDispatch, useSelector } from 'react-redux';
-import { checkLocation, getCity } from '../features/userSlice';
-import { getCurrentWeather, getWeather } from '../features/weatherSlice';
+import { useSelector } from 'react-redux';
 import ModalPopUp from '../components/ModalPopUp';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import weathercodes from '../static/weathercode';
@@ -40,13 +38,13 @@ export default function Home() {
 
         <View style={{...styles.padding30, paddingTop: 0, flexDirection:'row'}}>
           <Pressable onPress={() => {setModalVisible(!modalVisible)}} style={{flex:1, ...styles.homeCard}}>
-            <Text>Set your goals</Text>
+            <Text style={{...styles.fontMedium, ...styles.fontBold, marginBottom:8}}>Step goals</Text>
           </Pressable>
           <View style={{flex:1, ...styles.homeCard}}>
-            <Text>Today's weather</Text>
-            <Text>{data.current_weather.temperature}</Text>
-            <Text>{codes[data.current_weather.weathercode]}</Text>
-            <Text>{clearSkies.includes(data.current_weather.weathercode) ? 'The weather is perfect for a long walk! Get your steps in!' : 'Oh no! It is best to stay home today. Perhaps try walking in place?'}</Text>
+            <Text style={{...styles.fontMedium, ...styles.fontBold, marginBottom:8}}>Weather</Text>
+            <Text style={{...styles.fontLarge, ...styles.fontBold}}>{data.current_weather.temperature}</Text>
+            <Text style={{...styles.fontMedium, ...styles.fontLight, marginBottom:15}}>{codes[data.current_weather.weathercode]}</Text>
+            <Text style={{textAlign:'center'}}>{clearSkies.includes(data.current_weather.weathercode) ? 'The weather is great for a walk!\nGet your steps in!' : 'Oh no! It is best to stay home today. Perhaps try walking in place?'}</Text>
           </View>
         </View>
 
