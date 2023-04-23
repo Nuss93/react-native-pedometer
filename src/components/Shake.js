@@ -23,9 +23,9 @@ export default function Shake() {
 
     return (
         <View>
-            <View style={{...styles.padding50, marginTop:20, alignSelf:'center', justifyContent:'center', backgroundColor:'#000', borderRadius:100}}>
-                <Text style={{color:'#fff'}}>Steps</Text>
-                <Text style={{color:'#fff', textAlign:'center'}}>{steps}</Text>
+            <View style={{...styles.padding30, marginTop:20, alignSelf:'center', justifyContent:'center', backgroundColor:'#000', borderRadius:100}}>
+                <Text style={{color:'#fff', ...styles.fontMedium, ...styles.fontBold}}>Steps</Text>
+                <Text style={{color:'#fff', textAlign:'center', ...styles.fontLarge, ...styles.fontBold}}>{steps}</Text>
             </View>
             <TouchableOpacity style={{marginTop:30}} onPress={() => setSteps(steps + 1)} >
                 <Text style={{textAlign:'center', color:'#fff'}}>Add Step</Text>

@@ -31,7 +31,7 @@ export default function Home() {
     }
     if(loading === 'idle' && data.length !== 0) {
       display = <View style={{flex:1, backgroundColor:'#fff'}}>
-        <View style={{...styles.padding50, paddingBottom: 20 }}>
+        <View style={{...styles.padding50, paddingBottom: 20, paddingTop: 30 }}>
           <Text style={{...styles.fontLarge, ...styles.fontBold}}>Hello user!</Text>
           <Text>How's your step goals today? Wanna go for a walk?</Text>
         </View>
@@ -50,7 +50,7 @@ export default function Home() {
 
         <ModalPopUp modalVisible={modalVisible} childSetModalVisible={parentSetModalVisible} />
 
-        <View style={{backgroundColor: root.primary, borderTopColor: root.primary, borderTopWidth:20, borderTopLeftRadius:25, borderTopRightRadius:25, alignContent:'stretch', bottom:0, position:'absolute', width:'100%', paddingBottom:30}}>
+        <View style={{...styles.homeBottomDrawer}}>
           <Shake />
         </View>
       </View>

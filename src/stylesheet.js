@@ -22,6 +22,9 @@ export const Styles = {
         justifyContent: 'center',
         alignItems: 'center',
     },
+    homeBottomDrawer: {
+        backgroundColor: root.primary, borderTopColor: root.primary, borderTopWidth:40, borderTopLeftRadius:25, borderTopRightRadius:25, alignContent:'stretch', bottom:0, position:'absolute', width:'100%', paddingBottom:40
+    },
     weatherCard_header: {
         backgroundColor: root.primary,
         padding: 20,
