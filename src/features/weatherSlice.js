@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getWeather = createAsyncThunk('weather/getWeather', async (coords) => {
-    console.log('aaac', coords);
     return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lng}&current_weather=true&timezone=auto&daily=rain_sum,temperature_2m_max,temperature_2m_min,weathercode&hourly=temperature_2m,weathercode`).then(res => {
-        console.log(coords);
         return res.json()
     })
 })
@@ -29,6 +27,4 @@ export const weatherSlice = createSlice({
     }
 })
 
-// export const { add, remove } = weatherSlice.actions
-// export const getWeatherData = (state) => state.weather.data
 export default weatherSlice.reducer;

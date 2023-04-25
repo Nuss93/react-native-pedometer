@@ -24,7 +24,7 @@ export default function Weather() {
       </SafeAreaView>
     }
     if(loading === 'idle' && data.length  !== 0) {
-      display = <ScrollView style={{flex:1, backgroundColor:'#fff', ...styles.padding50}}>
+      display = <ScrollView style={{flex:1, backgroundColor:'#fff', ...styles.padding30}}>
         <View style={{...styles.weatherCard_header, justifyContent:'space-between', flexDirection:'row'}}>
           <View>
             <Text style={{...styles.fontLarge, ...styles.fontBold, color:'#fff'}}>{city}</Text>

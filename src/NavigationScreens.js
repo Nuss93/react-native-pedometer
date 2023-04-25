@@ -34,7 +34,7 @@ export default function NavigationScreens() {
 				// Saves coordinates into redux stores
 				dispatch(updateLocation(coords))
 
-				// Geths the weather details and stores in redux stores
+				// Gets the weather details and stores in redux stores
 				dispatch(getWeather(coords))
 			})
 		}
