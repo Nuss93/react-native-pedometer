@@ -13,7 +13,7 @@ export default function Weather() {
   const {data, loading} = useSelector((state) => state.weather)
   const codes = weathercodes
   
-  // Toggle between loader and display content once API has been fetched
+  // Conditional rendering logic for loader if data has not been completely fetched
   const renderContent = () => {
     let display
     if(loading === 'pending' || data.length === 0) {

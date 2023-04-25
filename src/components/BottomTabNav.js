@@ -21,6 +21,7 @@ const routes = [
     }
 ]
 
+// Component that renders the bottom tab navigator
 export default function BottomTabNav() {
     const route = useRoute()
     const navigation = useNavigation()

@@ -13,18 +13,15 @@ const Stack = createNativeStackNavigator();
 
 export default function NavigationScreens() {
     const dispatch = useDispatch()
-    // const location = useSelector(checkLocation), city = useSelector(getCity)
 	const {location, city} = useSelector((state) => state.user)
 
 	useEffect(() => {
-		console.log(location, city);
 		// Using ipapi.co API to fetch device's coordinates
 		if(!location) {
 			let url = 'https://ipapi.co/json'
 			fetch(url)
 			.then(result => result.json())
 			.then(result => {
-				console.log(result);
 				let coords = {
 					lat: result.latitude,
 					lng: result.longitude,
@@ -51,6 +48,7 @@ export default function NavigationScreens() {
                 <Stack.Screen name='Weather' component={Weather} options={{animation: 'none'}} />
 
                 {/* Other stacks go here */}
+
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -9,19 +9,18 @@ import ModalPopUp from '../components/ModalPopUp';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import weathercodes from '../static/weathercode';
 
-
 const styles = StyleSheet.create(Styles)
 export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
   const codes = weathercodes
   const clearSkies = [0,1,2,3,45,48]
-
-  const {location, city} = useSelector((state) => state.user)
   const {data,loading} = useSelector((state) => state.weather)
+  
   const parentSetModalVisible = () => {
     setModalVisible(!modalVisible)
   }
   
+  // Conditional rendering logic for loader if data has not been completely fetched
   const renderContent = () => {
     let display
     if(data.length === 0) {
@@ -44,6 +43,8 @@ export default function Home() {
             <Text style={{...styles.fontMedium, ...styles.fontBold, marginBottom:8}}>Weather</Text>
             <Text style={{...styles.fontLarge, ...styles.fontBold}}>{data.current_weather.temperature}</Text>
             <Text style={{...styles.fontMedium, ...styles.fontLight, marginBottom:15}}>{codes[data.current_weather.weathercode]}</Text>
+
+            {/* Text to display if the skies are clear or not. Will read from a preset array of weathercodes that indicate if the weather is good or not. */}
             <Text style={{textAlign:'center'}}>{clearSkies.includes(data.current_weather.weathercode) ? 'The weather is great for a walk!\nGet your steps in!' : 'Oh no! It is best to stay home today. Perhaps try walking in place?'}</Text>
           </View>
         </View>

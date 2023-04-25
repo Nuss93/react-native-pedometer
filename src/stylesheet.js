@@ -14,6 +14,8 @@ export const Styles = {
     fontSmall: { fontSize:12 },
     fontBold: { fontWeight: 'bold' },
     fontLight: { fontWeight: '200' },
+
+    // ====== Specific styles ====== //
     homeCard: {
         backgroundColor: root.secondary,
         padding:15,

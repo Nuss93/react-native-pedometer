@@ -5,7 +5,7 @@ import BottomTabNav from '../components/BottomTabNav'
 export default function App() {
   return (
     <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
-        <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'#fff'}}><Text>Weather</Text></View>
+        <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'#fff'}}><Text>Work in progress</Text></View>
         <BottomTabNav />
     </SafeAreaView>
   )

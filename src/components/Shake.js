@@ -8,6 +8,7 @@ const styles = StyleSheet.create(Styles)
 export default function Shake() {
     const [steps, setSteps] = useState(0)
     useEffect(() => {
+        // Subscribe to event listener when device is shaken
         const subscription = RNShake.addListener(() => {
             countStep()
         })
@@ -17,6 +18,8 @@ export default function Shake() {
         }
     }, [steps])
 
+    // Adds step count to state when device is shaken
+    // IMPROVEMENT: Can make data structure better to store start and end date for each step for easy data analytics
     const countStep = () => {
 +        setSteps(steps + 1)
     }

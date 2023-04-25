@@ -2,10 +2,6 @@ import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 import BottomTabNav from '../components/BottomTabNav'
 
-const sampleData = [
-  {}
-]
-
 export default function History() {
   return (
     <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>

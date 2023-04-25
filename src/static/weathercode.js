@@ -16,11 +16,5 @@ const weathercodes = {
     82 : "Violent rain",
     95 : "Thunderstorm",
     96 : "Thunderstorm with slight hail"
-    // 56, 57	Freezing Drizzle: Light and dense intensity
-    // 66, 67	Freezing Rain: Light and heavy intensity
-    // 71, 73, 75	Snow fall: Slight, moderate, and heavy intensity
-    // 77	Snow grains
-    // 85, 86	Snow showers slight and heavy
-    // 96, 99 *	Thunderstorm with slight and heavy hail
 }
 export default weathercodes;

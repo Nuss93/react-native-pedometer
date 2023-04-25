@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Slice to store user's location and city
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
@@ -16,6 +17,4 @@ export const userSlice = createSlice({
 })
 
 export const { updateLocation } = userSlice.actions
-// export const checkLocation = (state) => state.user.location
-// export const getCity = (state) => state.user.city
 export default userSlice.reducer
